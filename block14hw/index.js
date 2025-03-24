@@ -37,7 +37,8 @@ console.log(`The odd numbers you gave are ${getOdds(numbers)}.`);
  * @returns {number} the length of the array
  */
 function getLength(numbers) {
-  // TODO
+  //truly cant figure out another way to do this
+  return numbers.length;
 }
 
 /**
@@ -46,6 +47,17 @@ function getLength(numbers) {
  */
 function getSum(numbers) {
   // TODO
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  return sum;
+
+  //let sum = 0
+  // numbers.forEach(value =>{
+  //   sum += value
+  // });
+  // return sum
 }
 
 /**
@@ -53,7 +65,16 @@ function getSum(numbers) {
  * @returns {number} the mean of the numbers
  */
 function getMean(numbers) {
-  // TODO
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  return sum / numbers.length;
+
+  // numbers.forEach(value =>{
+  //   sum += value
+  // });
+  // return sum / numbers.length
 }
 
 /**
@@ -61,7 +82,14 @@ function getMean(numbers) {
  * @returns {number} the smallest of the numbers
  */
 function getMin(numbers) {
-  // TODO
+  let storeNum = numbers[0];
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] < storeNum) {
+      storeNum = numbers[i];
+    }
+  }
+  return storeNum;
+  //return Math.min(...numbers)
 }
 
 /**
@@ -69,7 +97,14 @@ function getMin(numbers) {
  * @returns {number} the largest of the numbers
  */
 function getMax(numbers) {
-  // TODO
+  let storeNum = numbers[0];
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] > storeNum) {
+      storeNum = numbers[i];
+    }
+  }
+  return storeNum;
+  //return Math.max(...numbers)
 }
 
 /**
@@ -78,6 +113,18 @@ function getMax(numbers) {
  */
 function getRange(numbers) {
   // TODO
+  let max = numbers[0];
+  let min = numbers[0];
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] < min) {
+      min = numbers[i];
+    }
+    if (numbers[i] > max) {
+      max = numbers[i];
+    }
+  }
+
+  return max - min;
 }
 
 /**
@@ -86,6 +133,13 @@ function getRange(numbers) {
  */
 function getEvens(numbers) {
   // TODO
+  let storeEven = [];
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 == 0) {
+      storeEven.push(numbers[i]);
+    }
+  }
+  return storeEven;
 }
 
 /**
@@ -94,4 +148,11 @@ function getEvens(numbers) {
  */
 function getOdds(numbers) {
   // TODO
+  let storeOdd = [];
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers[i] % 2 == 1) {
+      storeOdd.push(numbers[i]);
+    }
+  }
+  return storeOdd;
 }
